@@ -51,19 +51,39 @@ export const DayGrid = () => {
       <h1>Day Grid: {getFormattedDate(SAMPLE_DAY.day)}</h1>
       <div id='day-grid'>
         <div id='header-row' className='flex justify-evenly'>
-          <div></div>
+          <IntervalCell> </IntervalCell>
           {[":00", ":15", ":30", ":45"].map((value, index) => (
             <IntervalCell key={index}>{value}</IntervalCell>
           ))}
         </div>
       </div>
+      <div id='hour-rows'>
+        {SAMPLE_DAY.hours.map(({ hour, blocks }, index) => {
+          return (
+            <div key={index} className='flex justify-evenly'>
+              <IntervalCell>{hour}</IntervalCell>
+              {blocks.map((block, index) => {
+                return <IntervalCell key={index}>{block.category}</IntervalCell>
+              })}
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
 
-export const IntervalCell = ({ children }: { children: React.ReactNode }) => {
+export const IntervalCell = ({
+  children,
+  ...props
+}: {
+  children: React.ReactNode
+}) => {
   return (
-    <div className='border broder-rose-50 w-10 h-10 flex items-center justify-center'>
+    <div
+      className='border broder-rose-50 w-1/5 h-10 flex items-center justify-center'
+      {...props}
+    >
       {children}
     </div>
   )
