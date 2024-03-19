@@ -1,5 +1,4 @@
-import { DayGrid } from "@/components/day-grid";
-import Image from "next/image";
+import { DayGrid } from "@/components/day-grid"
 
 export default function Home() {
   return (
@@ -7,5 +6,5 @@ export default function Home() {
       <h1>Pace App v0.1</h1>
       <DayGrid />
     </div>
-  );
+  )
 }
