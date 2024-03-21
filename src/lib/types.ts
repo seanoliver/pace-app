@@ -1,7 +1,6 @@
 export type Interval = 15 | 30
 
 export type TimeBlock = {
-  id: string,
   category: string, // TODO: Type to user-defined enum
   description: string,
 }

@@ -10,22 +10,18 @@ const SAMPLE_DAY: DayBlock = {
       hour: 0,
       blocks: [
         {
-          id: "0",
           category: "work",
           description: "Write code",
         },
         {
-          id: "1",
           category: "work",
           description: "Write more code",
         },
         {
-          id: "2",
           category: "work",
           description: "Write even more code",
         },
         {
-          id: "3",
           category: "work",
           description: "Write even more code",
         },
