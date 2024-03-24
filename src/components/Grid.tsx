@@ -17,7 +17,7 @@ const intervalsPerHour = 60 / INTERVAL
 //       blocks: Array.from({ length: intervalsPerHour }, (_, index) => {
 //         return {
 //           id: index.toString(),
-//           category: "work", 
+//           category: "work",
 //           description: "Write code",
 //           start: new Date(),
 //           end: new Date(),
@@ -36,18 +36,18 @@ const intervalsPerHour = 60 / INTERVAL
 //   })
 // }
 
-export const Grid = ({blockGrid }: {blockGrid: BlockGrid}) => {
-
-  const gaplessGrid = useGetGaplessDay({grid: blockGrid})
+export const Grid = ({ blockGrid }: { blockGrid: BlockGrid }) => {
+  const gaplessGrid = useGetGaplessDay({ grid: blockGrid })
 
   return (
-    <div>
-      {Object.entries(gaplessGrid).map(([hour, row]) => {
-        return <GridRow key={hour} hour={hour} row={row} />
-      })}
+    <div className="flex flex-col justify-center items-center">
+      <div className="w-1/2">
+        {Object.entries(gaplessGrid).map(([hour, row]) => {
+          return <GridRow key={hour} hour={hour} row={row} />
+        })}
+      </div>
     </div>
   )
-
 }
 
 // export const DayGrid = () => {
